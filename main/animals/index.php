@@ -1,8 +1,22 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="/~sjt7zn/project/jquery-3.4.0.min.js"></script>
 </head>
 <body>
+  <script>
+    function getTable() {
+      $.ajax({
+        url:"./getTable.php",
+        success: function(data){
+          $("#tableDisplay").html(data);
+        }
+      });
+    }
+  </script>
+
+
+
   <div class="container text-center">
     <h1>Animals</h1>
   </div>
@@ -24,8 +38,12 @@
     </div>
   </div>
 
-  <div class="container">
-    <button class="btn btn-success">Display Table</button>
+  <div class="container text-center pt-5">
+    <button class="btn btn-success" onclick="getTable()">Display Table</button>
+  </div>
+  
+  <div class="container pt-5" id="tableDisplay">
+    
   </div>
 
 </body>
