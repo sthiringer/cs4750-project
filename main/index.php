@@ -7,39 +7,46 @@
            mysqli_connect_error());
            return null;
         }
-        $sql="INSERT IGNORE INTO guest (fname, lname) VALUES ('$_POST[firstname]', '$_POST[lastname]')";
-        if (!mysqli_query($con,$sql))
-        {
-        die('Error: ' . mysqli_error($con));
+        if($_POST['login-btn']=='guest') {
+		$sql="INSERT IGNORE INTO guest (fname, lname) VALUES ('$_POST[firstname]', '$_POST[lastname]')";
+        	if (!mysqli_query($con,$sql))
+        	{
+        	die('Error: ' . mysqli_error($con));
+        	}
+        	mysqli_close($con);
+		include('guest.html');
+	}
+	else if($_POST['login-btn']=='tourguide') {
+                $sql="SELECT * FROM guide WHERE (first_name='$_POST[firstname]' AND last_name='$_POST[lastname]')";
+                $res = mysqli_query($con,$sql); 
+                if (!$res)
+                {
+                die('Error: ' . mysqli_error($con));
+                }
+                mysql_close($con);              
+                $row = mysqli_fetch_array($res);
+                if (is_null($row)) {
+                        echo "Please continue as a guest instead";
+                }
+                else {
+                        include('tourguide.html');
+                }
         }
-        mysqli_close($con);
+	else if($_POST['login-btn']=='zookeeper') {	
+		$sql="SELECT * FROM zookeeper WHERE (first_name='$_POST[firstname]' AND last_name='$_POST[lastname]')";
+		$res = mysqli_query($con,$sql); 
+		if (!$res)
+                {
+                die('Error: ' . mysqli_error($con));
+                }
+		mysql_close($con);
+		$row = mysqli_fetch_array($res);	 
+		if (is_null($row)) {
+			echo "Please continue as a guest instead";
+		}
+		else {
+			include('zookeeper.html');
+		}
+        }
+
 ?>
-
-<html>
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-  <div class="container text-center">
-    <h1> Main Page </h1>
-  </div>
-  <div class="container text-center" style="margin-top:10%">
-    <div class="row justify-content-md-center">
-      <div class="col-md-4 p-4">
-        <a href="./animals"><button class="btn btn-primary btn-block" type="button">See the animals</button></a>
-      </div>
-      <div class="col-md-4 p-4">
-        <a href="./tours"><button class="btn btn-primary btn-block" type="button">Sign up for a tour</button></a>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-md-4 p-4">
-        <a href="./events"><button class="btn btn-primary btn-block" type="button">Browse events</button></a>
-      </div>
-      <div class="col-md-4 p-4">
-        <a href="./exhibits"><button class="btn btn-primary btn-block" type="button">Check out the exhibits</button></a>
-      </div>
-    </div>
-  </div>
-
-</body>
-</html>

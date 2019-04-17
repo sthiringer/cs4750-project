@@ -29,13 +29,8 @@
       <div class="container text-center p-3">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
-    </form>
+      <button type="submit" class="btn btn-primary" name="login-btn" value="guest" style="margin-right:30px;">Continue as Guest</button><button type="submit" class="btn btn-danger" name="login-btn" value="zookeeper" style="margin-right:30px;">Continue as Zookeeper</button><button type="submit" class="btn btn-warning" name="login-btn" value="tourguide">Continue as Tour Guide</button>	    
+     </form>
   </div>
-  
-  <div class="container text-center pt-5">
-    <a href="./zookeeper"><button class="btn btn-danger">Zookeeper Admin Portal</button></a>
-    <a href="./tourguide"><button class="btn btn-danger">Tour Guide Admin Portal</button></a>
-  </div>
-
 </body>
 </html>
