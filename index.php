@@ -26,9 +26,6 @@
       <div class="form-group">
 	<label for="lastname">Last Name: </label><input class="form-control" id="lastname" type="text" name="lastname" required>
       </div>
-      <div class="container text-center p-3">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
       <button type="submit" class="btn btn-primary" name="login-btn" value="guest" style="margin-right:30px;">Continue as Guest</button><button type="submit" class="btn btn-danger" name="login-btn" value="zookeeper" style="margin-right:30px;">Continue as Zookeeper</button><button type="submit" class="btn btn-warning" name="login-btn" value="tourguide">Continue as Tour Guide</button>	    
      </form>
   </div>
