@@ -7,12 +7,12 @@
            mysqli_connect_error());
            return null;
         }
-        $sql="INSERT IGNORE INTO event (event_name, date, start_time, end_time, event_location) 
-		     VALUES ('$_POST[eventname]', '$_POST[date]', '$_POST[start]', '$_POST[end]', '$_POST[location]')";
-        if (!mysqli_query($con,$sql))
+        $sql="DELETE FROM event WHERE event_id= " .$_POST['eventID'];
+	if (!mysqli_query($con,$sql))
         {
         die('Error: ' . mysqli_error($con));
         }
         mysqli_close($con);
 ?>
-<h1>Added Event</h1>
+
+<h1>One event deleted from the table.</h1>
