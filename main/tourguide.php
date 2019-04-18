@@ -1,3 +1,17 @@
+
+<?php
+session_start();
+if ($_SESSION['user_type'] != 'TOURGUIDE'){
+   session_destroy();
+   //include('../index.php');
+   header("Location: ../index.php");
+   die();
+}
+?>
+
+
+
+
 <html>
 <head>
   <meta charset="utf-8">

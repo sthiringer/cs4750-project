@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!doctype html>
 
 <html lang="en">
@@ -16,11 +21,10 @@
   </div>
 
   <div class="container text-center pt-5">
-    <a href="./addAnimals.html"><button class="btn btn-danger">Add Animal</button></a>
-    <a href="./addEvents.html"><button class="btn btn-danger">Add Event</button></a>
-    <a href="./deleteEvents.html"><button class="btn btn-danger">Delete Event</button></a>
+    <a href="./animalForm.php"><button class="btn btn-danger">Add Animal</button></a>
+    <a href="./eventForm.php"><button class="btn btn-danger">Add Event</button></a>
+    <a href="./deleteForm.php"><button class="btn btn-danger">Delete Event</button></a>
   </div>
 
 </body>
 </html>
-
