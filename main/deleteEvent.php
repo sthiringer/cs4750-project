@@ -1,4 +1,5 @@
 <?php
+	session_start();
         require_once('/u/sjt7zn/public_html/project/library.php');
         $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
         // Check connection
@@ -7,12 +8,19 @@
            mysqli_connect_error());
            return null;
         }
-        $sql="DELETE FROM event WHERE event_id= " .$_POST['eventID'];
-	if (!mysqli_query($con,$sql))
-        {
-        die('Error: ' . mysqli_error($con));
-        }
-        mysqli_close($con);
-?>
+	if ($_SESSION['user_type'] == 'ZOOKEEPER'){
+           $sql= $con->prepare("DELETE FROM event WHERE event_id=?");
+	   $sql->bind_param("s", $id);
 
-<h1>One event deleted from the table.</h1>
+	   $id = $_POST['eventID'];
+	   if (!$sql->execute())
+           {
+		die('Error: ' . mysqli_error($con));
+           }
+           mysqli_close($con);
+	   header("Location: ./deleteForm.php");
+	}else{
+	   echo "Improper user session type";
+	}
+	$con->close();
+?>

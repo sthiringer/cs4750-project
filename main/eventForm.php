@@ -1,11 +1,18 @@
 
 <?php
 session_start();
+//echo "user type" . $_SESSION['user_type'];
 if ($_SESSION['user_type'] != 'ZOOKEEPER'){
    session_destroy();
    //include('../index.php');
    header("Location: ../index.php");
    die();
+}else if($_SESSION['from'] == 'event'){
+   echo '<script language="javascript">';
+   echo 'alert("Event successfully added.")';
+   echo '</script>';
+   $_SESSION['from'] = '';
+   $_SESSION['user_type'] = 'ZOOKEEPER';
 }
 ?>
 

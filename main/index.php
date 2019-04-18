@@ -8,7 +8,7 @@
            mysqli_connect_error());
            return null;
         }
-        if($_POST['login-btn']=='guest') {
+        if($_POST['login-btn']=='guest' || $_SESSION['user_type'] == 'GUEST') {
    		$sql="INSERT IGNORE INTO guest (fname, lname) VALUES ('$_POST[firstname]', '$_POST[lastname]')";
    		if (!mysqli_query($con,$sql))
    		{
@@ -18,7 +18,7 @@
 		$_SESSION['user_type'] = 'GUEST';
    		include('guest.html');
    		}
-   	else if($_POST['login-btn']=='tourguide') {
+   	else if($_POST['login-btn']=='tourguide' || $_SESSION['user_type'] == 'TOURGUIDE') {
                 $sql="SELECT * FROM guide WHERE (first_name='$_POST[firstname]' AND last_name='$_POST[lastname]')";
                 $res = mysqli_query($con,$sql); 
                 if (!$res)
@@ -27,7 +27,7 @@
                 }
                 mysql_close($con);              
                 $row = mysqli_fetch_array($res);
-                if (is_null($row)) {
+                if (is_null($row) && !$_SESSION['user_type'] == 'TOURGUIDE') {
                         echo "Please continue as a guest instead";
                 }
                 else {
@@ -37,7 +37,7 @@
 		     die();
                 }
         }
-   	else if($_POST['login-btn']=='zookeeper') {
+   	else if($_POST['login-btn']=='zookeeper' || $_SESSION['user_type'] == 'ZOOKEEPER') {
    	     $sql="SELECT * FROM zookeeper WHERE (first_name='$_POST[firstname]' AND last_name='$_POST[lastname]')";
    	     $res = mysqli_query($con,$sql); 
    	     if (!$res)
@@ -46,7 +46,7 @@
              }
    	     mysql_close($con);
    	     $row = mysqli_fetch_array($res); 
-   	     if (is_null($row)) {
+   	     if (is_null($row) && !$_SESSION['user_type'] == 'ZOOKEEPER') {
    	     	echo "Please continue as a guest instead";
    	     }
    	     else 

@@ -1,5 +1,5 @@
 <?php
-	//echo $_SESSION['user_type'] . 'elo';
+	session_start();
         require_once('/u/sjt7zn/public_html/project/library.php');
         $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
         // Check connection
@@ -9,16 +9,23 @@
            return null;
         }
 	if ($_SESSION['user_type'] == 'ZOOKEEPER'){
-	   $sql="INSERT IGNORE INTO animal (name, species, conservation_status, weight) 
-	   	VALUES ('$_POST[animal]', '$_POST[type]', '$_POST[consv]', '$_POST[weight]')";
-           if (!mysqli_query($con,$sql))
-           {
-           die('Error: ' . mysqli_error($con));
-           }
-	   echo '<h1>One new record added to the table.</h1>';
-           mysqli_close($con);
+	   $sql = $con->prepare("INSERT IGNORE INTO animal (name, species, conservation_status, weight) VALUES (?, ?, ?, ?)");
+	   $sql->bind_param("ssss", $name, $species, $c_s, $weight);
+	   
+	   //Set parameters, execute
+	   $name = $_POST['animalname'];
+	   $species = $_POST['animaltype'];
+	   $c_s = $_POST['conservationstatus'];
+	   $weight = $_POST['weight'];
+	   $sql->execute();
+	   
+           $sql->close();
+	   $con->close();
+	   $_SESSION['from'] = 'animal';
+           header("Location: ./animalForm.php");
 	}
 	else{
 		echo 'Improper session user type';
+	   	$con->close();
 	}
 ?>

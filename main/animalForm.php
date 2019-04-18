@@ -6,16 +6,14 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
    //include('../index.php');
    header("Location: ../index.php");
    die();   
+}else if($_SESSION['from'] == 'animal'){
+   echo '<script language="javascript">';
+   echo 'alert("Animal successfully added.")';
+   echo '</script>';
+   $_SESSION['from'] = '';
+   $_SESSION['user_type'] = 'ZOOKEEPER';
 }
-
-
 ?>
-
-
-
-
-
-
 
 <html>
 <head>
@@ -32,8 +30,6 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 <div class="container text-center p-3">
     <h3>Insert the Animal Information Below</h3>
 </div>
-
-
 
 <div class="container">
     <form action="addAnimal.php" method="post">
