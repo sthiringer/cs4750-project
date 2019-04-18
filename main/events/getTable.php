@@ -1,18 +1,12 @@
-<html>
-<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-
 <?php
-        require_once('/u/sjt7zn/public_html/project/library.php');
-        $con = new mysqli($SERVER, $USERNAME, $PASSWORD,$DATABASE);
-        // Check connection
-        if (mysqli_connect_errno()) {
-        echo("Can't connect to MySQL Server. Error code: " .
-        mysqli_connect_error());
-        return null;
-        }
+  require_once('/u/sjt7zn/public_html/project/library.php');
+  $con = new mysqli($SERVER, $USERNAME, $PASSWORD,$DATABASE);
+  // Check connection
+  if (mysqli_connect_errno()) {
+    echo("Can't connect to MySQL Server. Error code: " .
+    mysqli_connect_error());
+    return null;
+  }
         // Form the SQL query (a SELECT query)
         $sql="SELECT * FROM event";
         $result = mysqli_query($con,$sql);
@@ -22,9 +16,9 @@
         echo "<tr>";
         echo "<th>Event ID</th>";
         echo "<th>Event Name</th>";
-        echo "<th>Date</th>";
         echo "<th>Start Time</th>";
         echo "<th>End Time</th>";
+        echo "<th>Date</th>";
 	echo "<th>Event Location</th>";
         echo "</tr>";
         echo "</thead>";
@@ -40,9 +34,6 @@
         }
         echo "</table>";
         mysqli_close($con);
+	
+
 ?>
-
-
-
-</body>
-</html>
