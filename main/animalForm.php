@@ -49,6 +49,10 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 	<button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
+    <div class="container text-center p-3">
+      <a href="./"><button class="btn btn-primary">Back to Main</button></a>
+    </div>
+
   </div>
 
 

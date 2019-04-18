@@ -8,7 +8,6 @@
 
 </head>
 <body>
-
   <div class="container text-center p-3">
     <h4>Enter the ID of the Event to Delete.</h4>
   </div>
@@ -18,9 +17,13 @@
         <label for="eventID">Event ID to delete: </label><input class="form-control" type="text" name="eventID" id="eventID" required>
         </div>
       <div class="container text-center p-3">
-        <button class="btn btn-primary" type="submit">Delete</button>
+          <button class="btn btn-danger" type="submit">Delete</button>
       </div>
     </form>
+    <div class="container text-center p-3">
+      <a href="./"><button class="btn btn-primary">Back to Main</button></a>
+    </div>
+    
 <?php
 session_start();
 if ($_SESSION['user_type'] != 'ZOOKEEPER'){
