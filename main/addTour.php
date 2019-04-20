@@ -12,9 +12,16 @@
         mysqli_connect_error());
         return null;
         }
-        $sql="INSERT IGNORE INTO tour(tour_name, date, start_time, end_time) 
-	      VALUES ('$_POST[tour_name]', '$_POST[date]', '$_POST[start]', '$_POST[end]')";
-        if (!mysqli_query($con,$sql))
+        $sql=$con->prepare("INSERT IGNORE INTO tour(tour_name, date, start_time, end_time) 
+	      VALUES(?,?,?,?)");
+        $sql->bind_param("ssss", $tourname, $date, $start, $end);
+         
+        $tourname = $_POST['tourname'];
+        $date = $_POST['date'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
+        
+        if (!$sql->execute())
  	{
  	 die('Error: ' . mysqli_error($con));
  	}	       
