@@ -25,7 +25,7 @@
     }
   </script>
 
-  <div class="container text-center">
+  <div class="container text-center mt-5">
     <h1>Exhibits</h1>
   </div>
   <div class="container-flex text-center mt-5">
@@ -42,6 +42,7 @@
 
   <div class="container text-center pt-5">
     <button id="tableBtn" class="btn btn-success" onclick="getTable()"><span class="ui-button-text">Display Table</span></button>
+    <a href="../" <button class="btn btn-primary ml-5">Back to Main</button></a>
   </div>
   
   <div class="container pt-5" id="tableDisplay">
