@@ -2,20 +2,48 @@
 
 <html lang="en">
 <head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  color:white;
+}
+
+h1, h3, h4, h5, label{
+  color: white;
+}
+
+.bg {
+  /* The image used */
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),url("animal-background-wallpaper-2.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
   <meta charset="utf-8">
 
   <title>The DB Project</title>
-  <meta name="ok" content="Project">
-  <meta name="project" content="yeah">
+  <meta name="Welcome Page" content="Project">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
 <body>
+<div class="bg">
   <div class="container text-center mt-3 mb-3">
-    <h1>Welcome to the Zoo!</h1>
-    <h5>Maintained by the Hookeepers</h3>
+      <h1>Welcome to the Zoo!</h1>
+      <h5>Maintained by the Hookeepers</h3>
   </div>
 <div class="container pt-5">
     <h4>To proceed to the site as a guest, please enter your name below.</h4>
@@ -31,5 +59,6 @@
 	</div>
      </form>
   </div>
+</div>
 </body>
 </html>
