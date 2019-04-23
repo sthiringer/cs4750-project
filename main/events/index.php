@@ -6,7 +6,8 @@
 <body>
  <style>
   html { margin-left: calc(100vw - 100%); }
-  </style>
+  .table thead th {vertical-align: top; } 
+ </style>
   <script>
     function getTable() {
       if($("#tableDisplay").is(":hidden") || $("#tableDisplay").children().length == 0){
@@ -22,6 +23,20 @@
         $("#tableDisplay").fadeOut(200);
         $("#tableBtn").html("Display Table");
       }
+    }
+  </script>
+
+  <script>
+    function exportTable() {
+      console.log("i got clicked");
+      var csv = $('#table').table2CSV({
+          delivery: 'value'
+      });
+      var a = document.createElement("a");
+      a.setAttribute("href", encodeURIComponent(csv));
+      a.setAttribute("download", "zoo-data.csv");
+      document.body.appendChild(a);
+      a.click();
     }
   </script>
 

@@ -16,7 +16,7 @@
         echo "<tr>";
         echo "<th>Exhibit Number</th>";
         echo "<th>Square Feet</th>";
-        echo "<th>Exhibit Name</th>";
+        echo "<th>Exhibit Name <button id='export' onClick='exportTable()' class='btn btn-warning btn-sm float-right'><b>Export as CSV</b></button></th>";
         echo "</tr>";
         echo "</thead>";
         while($row = mysqli_fetch_array($result)) {
