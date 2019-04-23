@@ -8,7 +8,7 @@
 
 </head>
 <body>
-  <div class="container text-center p-3">
+  <div class="container text-center mt-3 mb-3">
     <h4>Enter the ID of the Event to Delete.</h4>
   </div>
   <div class="container">

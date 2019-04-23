@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <div class="container text-center p-3">
+  <div class="container text-center mt-3 mb-3">
     <h1>Welcome to the Zookeeper Admin Page!</h1>
   </div>
 

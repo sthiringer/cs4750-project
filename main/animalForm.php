@@ -27,7 +27,7 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 
 <body>
 
-<div class="container text-center p-3">
+<div class="container text-center mt-3 mb-3">
     <h3>Insert the Animal Information Below</h3>
 </div>
 

@@ -29,7 +29,7 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 </head>
 <body>
 
-  <div class="container text-center p-3">
+  <div class="container text-center mt-3 mb-3">
     <h4>Enter in information for a new event here!</h4>
   </div>
   <div class="container">
