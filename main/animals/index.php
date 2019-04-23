@@ -57,7 +57,7 @@
         <p>Wow! Currently, <b class="text-success" style="font-size:24px"><?php echo getNumAnimalsOverWeight(500); ?></b> animals weigh over 500 pounds.</p>
       </div>
       <div class="col-md-5 p-4 ml-4 border-left border-top rounded">
-        <p>Our newest animal is <b class="text-success" style="font-size:24px"><?php echo getNewestAnimal()[0]; ?></b>, a <b class="text-success" style="font-size:24px"><?php echo getNewestAnimal()[1]; ?></b>!</p>
+        <p>Our newest animal is <b class="text-success" style="font-size:24px"><?php echo getNewestAnimal()[0]; ?></b>, a <b class="text-success" style="font-size:24px"><?php echo getNewestAnimal()[1] . "!"; ?></b></p>
       </div>
     </div>
   </div>
