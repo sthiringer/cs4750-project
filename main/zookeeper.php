@@ -17,6 +17,36 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 
 <html lang="en">
 <head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  color:white;
+}
+
+h1, h3, h4, h5, label{
+  color: white;
+}
+
+.bg {
+  /* The image used */
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),url("zoo.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+
   <meta charset="utf-8">
 
   <title>Zookeeper page</title>
@@ -26,18 +56,19 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 </head>
 
 <body>
+<div class="bg">
   <div class="container text-center mt-3 mb-3">
     <h1>Welcome to the Zookeeper Admin Page!</h1>
   </div>
 
   <div class="container text-center pt-5">
-    <a href="./animalForm.php"><button class="btn btn-primary">Add Animal</button></a>
-    <a href="./eventForm.php"><button class="btn btn-primary">Add Event</button></a>
+    <a href="./animalForm.php"><button class="btn" style="background-color:lightgreen">Add Animal</button></a>
+    <a href="./eventForm.php"><button class="btn" style="background-color:lightgreen">Add Event</button></a>
     <a href="./deleteForm.php"><button class="btn btn-danger">Delete Event</button></a>
   </div>
   <div class="container text-center p-3">
-    <a href="logout.php">Go Back to Welcome Page</a>
+    <a href="logout.php"><button class="btn" style="background-color:lightblue" type="button">Go Back to the Welcome Page</button></a>
   </div>
-
+</div>
 </body>
 </html>
