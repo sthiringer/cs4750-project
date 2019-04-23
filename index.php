@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container text-center p-3">
+  <div class="container text-center mt-3 mb-3">
     <h1>Welcome to the Zoo!</h1>
     <h5>Maintained by the Hookeepers</h3>
   </div>

@@ -16,13 +16,13 @@
 </head>
 
 <body>
-  <div class="container text-center p-3">
+  <div class="container text-center mt-3 mb-3">
     <h1>Welcome to the Zookeeper Admin Page!</h1>
   </div>
 
   <div class="container text-center pt-5">
-    <a href="./animalForm.php"><button class="btn btn-danger">Add Animal</button></a>
-    <a href="./eventForm.php"><button class="btn btn-danger">Add Event</button></a>
+    <a href="./animalForm.php"><button class="btn btn-primary">Add Animal</button></a>
+    <a href="./eventForm.php"><button class="btn btn-primary">Add Event</button></a>
     <a href="./deleteForm.php"><button class="btn btn-danger">Delete Event</button></a>
   </div>
 

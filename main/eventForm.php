@@ -1,11 +1,18 @@
 
 <?php
 session_start();
+//echo "user type" . $_SESSION['user_type'];
 if ($_SESSION['user_type'] != 'ZOOKEEPER'){
    session_destroy();
    //include('../index.php');
    header("Location: ../index.php");
    die();
+}else if($_SESSION['from'] == 'event'){
+   echo '<script language="javascript">';
+   echo 'alert("Event successfully added.")';
+   echo '</script>';
+   $_SESSION['from'] = '';
+   $_SESSION['user_type'] = 'ZOOKEEPER';
 }
 ?>
 
@@ -22,7 +29,7 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 </head>
 <body>
 
-  <div class="container text-center p-3">
+  <div class="container text-center mt-3 mb-3">
     <h4>Enter in information for a new event here!</h4>
   </div>
   <div class="container">
@@ -46,6 +53,9 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 	<input class="btn btn-primary" type="submit">
       </div>  
     </form>
+    <div class="container text-center p-3">
+      <a href="./"><button class="btn btn-primary">Back to Main</button></a>
+    </div>
 
 </body>
 </html>

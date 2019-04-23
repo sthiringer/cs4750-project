@@ -22,7 +22,7 @@ if ($_SESSION['user_type'] != 'TOURGUIDE'){
 
 </head>
 <body>
-<div class="container text-center pt-3">
+<div class="container text-center mt-3 mb-3">
   <h3>Enter information for a tour here!</h3>
 </div>
 
