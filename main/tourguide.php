@@ -44,6 +44,9 @@ if ($_SESSION['user_type'] != 'TOURGUIDE'){
       <input class="btn btn-primary" type="submit">
       </div>
   </form>
+  <div class="container text-center p-3">
+    <a href="logout.php"> Go back to Welcome Page </a>
+  </div>
 
 </body>
 </html>

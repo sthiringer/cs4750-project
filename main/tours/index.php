@@ -50,14 +50,14 @@
         <p>The zoo currently has <b class="text-success" style="font-size:24px"><?php echo getNum(); ?></b> tours to sign up for!</p>
       </div>
       <div class="col-md-5 p-4 ml-4 border-left border-bottom rounded">
-        <p>The shortest tour being offered is <b class="text-success" style="font-size:24px"><?php echo getShortestTour()[0]; ?></b>, at <b class="text-success" style="font-size:24px"><?php echo number_format(getShortestTour()[1]); ?></b> minutes! Efficient!</p>
+        <p>The shortest tour being offered is <b class="text-success" style="font-size:24px"><?php echo getShortestTour()[0]; ?></b> for <b class="text-success" style="font-size:24px"><?php echo number_format(getShortestTour()[1]); ?></b> minutes! Efficient!</p>
       </div>
       <div class="w-100"></div>
       <div class="col-md-5 p-4 mr-4 border-top border-right rounded">
         <p>How descriptive! Looks like <b class="text-success" style="font-size:24px"><?php echo number_format(getPctToursWithTourInName()); ?>%</b> of our tours have the word <b class="text-success" style="font-size:24px">tour</b> in them.</p>
       </div>
       <div class="col-md-5 p-4 ml-4 border-left border-top rounded">
-        <p>Our oldest (least recently added) tour is <b class="text-success" style="font-size:24px"><?php echo getOldestTour(); ?></b>.</p>
+        <p>Our oldest (least recently added) tour is the <b class="text-success" style="font-size:24px"><?php echo getOldestTour(); ?></b>.</p>
       </div>
     </div>
   </div>
