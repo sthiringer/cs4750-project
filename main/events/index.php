@@ -70,7 +70,7 @@ function getNum()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT COUNT(*) AS num FROM event";
+   $sql = 'CALL getNumEvents';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -87,7 +87,7 @@ function getUniqueLocations()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT COUNT(DISTINCT event_location) as num FROM event";
+   $sql = 'CALL getUniqueLocations';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -105,7 +105,7 @@ function getEventsInPast()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT COUNT(*) as num from event WHERE date < CURDATE()";
+   $sql = 'CALL getEventsInPast';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -122,7 +122,7 @@ function getLongestEvent()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT (TIME_TO_SEC(end_time)- TIME_TO_SEC(start_time))/3600 AS length, event_name FROM event WHERE end_time-start_time=(SELECT MAX(end_time-start_time) FROM event LIMIT 1)";
+   $sql = 'CALL getLongestEvent';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);

@@ -70,7 +70,7 @@ function getNum()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT COUNT(*) AS num FROM animal";
+   $sql = 'CALL getNumAnimals';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -87,7 +87,7 @@ function getPctEndangered()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT (SELECT COUNT(*) FROM animal WHERE conservation_status NOT LIKE 'Least Concern')/count(*) * 100 as pctEndangered FROM animal";
+   $sql = 'CALL getPctEndangered()';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -105,7 +105,7 @@ function getNumAnimalsOverWeight($weight)
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT COUNT(*) as num FROM animal";
+   $sql = "SELECT COUNT(*) as num FROM animal WHERE weight >= $weight";
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);

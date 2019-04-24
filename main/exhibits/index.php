@@ -63,7 +63,7 @@ function getNum()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT COUNT(*) AS num FROM exhibit";
+   $sql = 'CALL getNumExhibits';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -80,7 +80,7 @@ function getLargestAndName()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT exhibit_name as name, MAX(square_feet) as num FROM exhibit";
+   $sql = 'CALL getLargestAndName';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);

@@ -16,8 +16,6 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 }
 ?>
 
-
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -47,7 +45,7 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 	<label for="end">End Time: </label><input class="form-control" type="time" name="end" id="end" required>
 	</div>
       <div class="form-group">
-	<label for="location">Location: </label><input class="form-control" type="number" name="location" id="location" required>
+		<label for="location">Location:</label><input class="form-control" type="number" name="location" id="location" required>
 	</div>
       <div class="container text-center p-3">
 	<input class="btn btn-primary" type="submit">

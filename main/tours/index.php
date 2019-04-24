@@ -71,7 +71,7 @@ function getNum()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT COUNT(*) AS num FROM tour";
+   $sql = 'CALL getNumTours';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -88,7 +88,7 @@ function getShortestTour()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT tour_name as name, (TIME_TO_SEC(end_time) - TIME_TO_SEC(start_time))/60 as length FROM tour WHERE end_time-start_time=(SELECT MIN(end_time-start_time) FROM tour LIMIT 1)";
+   $sql = 'CALL getShortestTour';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -106,7 +106,7 @@ function getPctToursWithTourInName()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT (SELECT COUNT(*) FROM tour WHERE tour_name LIKE '%Tour%')/count(*) * 100 as pct FROM tour";
+   $sql = 'CALL getPctToursWithTourInName';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);
@@ -123,7 +123,8 @@ function getOldestTour()
     mysqli_connect_error());
     return null;
    }
-   $sql = "SELECT tour_name FROM tour WHERE tour_id=(SELECT min(tour_id) FROM tour) LIMIT 1";
+   
+   $sql = 'CALL getOldestTour';
    $result = mysqli_query($con,$sql);
    $row = mysqli_fetch_array($result);
    mysqli_close($con);

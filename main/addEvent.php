@@ -20,9 +20,12 @@
 	   $end = $_POST['end'];
 	   $location = $_POST['location'];
 	
-	   if (!$sql->execute())
-           {
-             die('Error: ' . mysqli_error($con));
+	   if (!$sql->execute()))
+           {	
+		exit (
+			'Error: ' . mysqli_error($con);
+		//	'<script type="text/javascript"> alert("Error: You cannot create an event for a date that has already passed.") </script>';
+		);
            }
 	   $_SESSION['from'] = 'event';
 	   header("Location: ./eventForm.php");
