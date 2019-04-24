@@ -57,7 +57,7 @@ h1, h3, h4, h5, label{
 
 <body>
 <div class="bg">
-  <div class="container text-center mt-3 mb-3">
+  <div class="container text-center pt-3 mb-3">
     <h1>Welcome to the Zookeeper Admin Page!</h1>
   </div>
 
