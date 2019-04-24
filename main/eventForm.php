@@ -49,7 +49,7 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
       <div class="form-group">
 	<label for="location">Location: </label>
 	       <!-- <input class="form-control" type="number" name="location" id="location" required> -->
-	       <select name="location" required>
+	       <select name="location" required class="form-control" data-dropup-auto="false">
   	       	       <option value="">Select...</option>
   		       <option value="1">Location 1</option>
   		       <option value="2">Location 2</option>
