@@ -28,7 +28,8 @@
                 mysql_close($con);              
                 $row = mysqli_fetch_array($res);
                 if (is_null($row) && !$_SESSION['user_type'] == 'TOURGUIDE') {
-                        echo "Please continue as a guest instead";
+                        //echo "Please continue as a guest instead";
+			header("Location: ../index.php");
                 }
                 else {
 		     $_SESSION['user_type'] = 'TOURGUIDE';
@@ -47,7 +48,8 @@
    	     mysql_close($con);
    	     $row = mysqli_fetch_array($res); 
    	     if (is_null($row) && !$_SESSION['user_type'] == 'ZOOKEEPER') {
-   	     	echo "Please continue as a guest instead";
+   	     	//echo "Please continue as a guest instead";
+		header("Location: ../index.php");
    	     }
    	     else 
 	     {
