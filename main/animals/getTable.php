@@ -21,6 +21,7 @@
         echo "<th>Conservation Status <button id='export' onClick='exportTable()' class='btn btn-warning btn-sm float-right'><b>Export as CSV</b></button></th>";
         echo "</tr>";
         echo "</thead>";
+	echo "<tbody>";
         while($row = mysqli_fetch_array($result)) {
                    echo "<tr>";
                    echo "<td>" . $row['animal_id'] . "</td>";
@@ -30,6 +31,7 @@
                    echo "<td>" . $row['conservation_status'] . "</td>";
                    echo "</tr>";
         }
+	echo "</tbody>";
         echo "</table>";
         mysqli_close($con);
 	

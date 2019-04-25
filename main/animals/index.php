@@ -1,14 +1,18 @@
 <html>
-<head>
+4<head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="/~sjt7zn/project/jquery-3.4.0.min.js"></script>
 <script src="/~sjt7zn/project/table2CSV.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 </head>
 <body>
-<style>
+  <style>
   html { margin-left: calc(100vw - 100%);}
   .table thead th{vertical-align: top;}
   </style>
+  <script>
+    
+    </script>
   <script>
     function getTable() {
       if($("#tableDisplay").is(":hidden") || $("#tableDisplay").children().length == 0){
@@ -17,9 +21,16 @@
           url:"./getTable.php",
           success: function(data){
             $("#tableDisplay").hide().html(data).fadeIn(200);
+            $('#table').dataTable();
+            $('select[name=table_length]').addClass("form-control");
+            $('input[type=search]').addClass("form-control");
+            $($("label:nth-of-type(1)")[0]).html($($("label:nth-of-type(1)")[0]).children("select"));
+            $($("label:nth-of-type(1)")[0]).prepend("Show");
+            $($("label:nth-of-type(1)")[0]).css("display", "block").css("float", "left");
+            $($("label:nth-of-type(1)")[1]).css("display", "block").css("float", "right");
+            $("#tableBtn").html("Hide Table");
           }
         });
-        $("#tableBtn").html("Hide Table");
       }else{
         $("#tableDisplay").fadeOut(200);
         $("#tableBtn").html("Display Table");
