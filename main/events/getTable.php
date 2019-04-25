@@ -19,7 +19,7 @@
         echo "<th>Start Time</th>";
         echo "<th>End Time</th>";
         echo "<th>Date</th>";
-	echo "<th>Event Location</th>";
+	echo "<th>Event Location <button id='export' onClick='exportTable()' class='btn btn-warning btn-sm float-right'><b>Export as CSV</b></button></th>";
         echo "</tr>";
         echo "</thead>";
         while($row = mysqli_fetch_array($result)) {

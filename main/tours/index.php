@@ -4,8 +4,9 @@
 <script src="/~sjt7zn/project/jquery-3.4.0.min.js"></script>
 </head>
 <body>
-<style>
-  html { margin-left: calc(100vw - 100%); }
+  <style>
+    html { margin-left: calc(100vw - 100%); }
+    .table thead th{vertical-align: top;}
   </style>
   <script>
     function getTable() {
@@ -25,6 +26,19 @@
     }
   </script>
 
+  <script>
+    function exportTable() {
+      console.log("i got clicked");
+      var csv = $('#table').table2CSV({
+          delivery: 'value'
+      });
+      var a = document.createElement("a");
+      a.setAttribute("href", encodeURIComponent(csv));
+      a.setAttribute("download", "zoo-data.csv");
+      document.body.appendChild(a);
+      a.click();
+    }
+  </script>
 
 
   <div class="container text-center mt-5">
@@ -36,14 +50,14 @@
         <p>The zoo currently has <b class="text-success" style="font-size:24px"><?php echo getNum(); ?></b> tours to sign up for!</p>
       </div>
       <div class="col-md-5 p-4 ml-4 border-left border-bottom rounded">
-        <p>The shortest tour being offered is <b class="text-success" style="font-size:24px"><?php echo getShortestTour()[0]; ?></b>, at <b class="text-success" style="font-size:24px"><?php echo number_format(getShortestTour()[1]); ?></b> minutes! Efficient!</p>
+        <p>The shortest tour being offered is <b class="text-success" style="font-size:24px"><?php echo getShortestTour()[0]; ?></b> for <b class="text-success" style="font-size:24px"><?php echo number_format(getShortestTour()[1]); ?></b> minutes! Efficient!</p>
       </div>
       <div class="w-100"></div>
       <div class="col-md-5 p-4 mr-4 border-top border-right rounded">
         <p>How descriptive! Looks like <b class="text-success" style="font-size:24px"><?php echo number_format(getPctToursWithTourInName()); ?>%</b> of our tours have the word <b class="text-success" style="font-size:24px">tour</b> in them.</p>
       </div>
       <div class="col-md-5 p-4 ml-4 border-left border-top rounded">
-        <p>Our oldest (least recently added) tour is <b class="text-success" style="font-size:24px"><?php echo getOldestTour(); ?></b>.</p>
+        <p>Our oldest (least recently added) tour is the <b class="text-success" style="font-size:24px"><?php echo getOldestTour(); ?></b>.</p>
       </div>
     </div>
   </div>

@@ -6,6 +6,7 @@
 <body>
   <style>
   html { margin-left: calc(100vw - 100%); }
+  .table thead th { vertical-align:top; }
   </style>
   <script>
     function getTable() {
@@ -25,6 +26,21 @@
     }
   </script>
 
+  <script>
+    function exportTable() {
+      console.log("i got clicked");
+      var csv = $('#table').table2CSV({
+          delivery: 'value'
+      });
+      var a = document.createElement("a");
+      a.setAttribute("href", encodeURIComponent(csv));
+      a.setAttribute("download", "zoo-data.csv");
+      document.body.appendChild(a);
+      a.click();
+    }
+  </script>
+
+
   <div class="container text-center mt-5">
     <h1>Exhibits</h1>
   </div>
@@ -34,7 +50,7 @@
         <p>The zoo currently has <b class="text-success" style="font-size:24px"><?php echo getNum(); ?></b> exhibits for our animals.</p>
       </div>
       <div class="col-md-5 p-4 ml-4 border-left border-bottom rounded">
-        <p><b class="text-success" style="font-size:24px"><?php echo getLargestAndName()[0]; ?></b> is our largest exhibit, at a whopping <b class="text-success" style="font-size:24px"><?php echo getLargestAndName()[1]; ?></b> square feet! Spacious!</p>
+        <p>The <b class="text-success" style="font-size:24px"><?php echo getLargestAndName()[0]; ?></b> is our largest exhibit, at a whopping <b class="text-success" style="font-size:24px"><?php echo getLargestAndName()[1]; ?></b> square feet! Spacious!</p>
       </div>
       <div class="w-100"></div>
     </div>

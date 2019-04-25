@@ -1,10 +1,42 @@
 <html>
-<body>
+
 <head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  color:white;
+}
+
+h1, h3, h4, h5, label{
+  color: black;
+}
+
+.bg {
+  /* The image used */
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ),url("safari-main.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-  <div class="container text-center mt-3">
+<div class="bg">
+  <div class="container text-center pt-3">
     <h1> Main Page </h1>
   </div>
   <div class="container text-center" style="margin-top:10%">
@@ -13,7 +45,7 @@
         <a href="./animals"><button class="btn btn-primary btn-block" type="button">See the animals</button></a>
       </div>
       <div class="col-md-4 p-4">
-        <a href="./tours"><button class="btn btn-primary btn-block" type="button">View tours</button></a>
+        <a href="./tours"><button class="btn btn-primary btn-block" type="button"> View available tours</button></a>
       </div>
       <div class="w-100"></div>
       <div class="col-md-4 p-4">
@@ -24,7 +56,10 @@
       </div>
     </div>
   </div>
-
+  <div class="container text-center p-3">
+    <a href="logout.php"><button class="btn btn-danger " type="button">Go Back to the Welcome Page</button></a>
+  </div>
+</div>
 </body>
 </html>
 

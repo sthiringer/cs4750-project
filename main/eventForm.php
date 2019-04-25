@@ -45,7 +45,16 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 	<label for="end">End Time: </label><input class="form-control" type="time" name="end" id="end" required>
 	</div>
       <div class="form-group">
-		<label for="location">Location:</label><input class="form-control" type="number" name="location" id="location" required>
+
+	<label for="location">Location: </label>
+	       <!-- <input class="form-control" type="number" name="location" id="location" required> -->
+	       <select name="location" required class="form-control" data-dropup-auto="false">
+  	       	       <option value="">Select...</option>
+  		       <option value="1">Location 1</option>
+  		       <option value="2">Location 2</option>
+		       <option value="3">Location 3</option>
+		       <option value="4">Location 4</option>
+	       </select>
 	</div>
       <div class="container text-center p-3">
 	<input class="btn btn-primary" type="submit">
