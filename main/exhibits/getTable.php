@@ -11,7 +11,7 @@
         $sql="SELECT * FROM exhibit";
         $result = mysqli_query($con,$sql);
         // Print the data from the table row by row
-        echo "<table class='table table-hover table-bordered'>";
+        echo "<table id='table' class='table table-hover table-bordered'>";
         echo "<thead class='thead-dark'>";
         echo "<tr>";
         echo "<th>Exhibit Number</th>";
@@ -19,6 +19,7 @@
         echo "<th>Exhibit Name <button id='export' onClick='exportTable()' class='btn btn-warning btn-sm float-right'><b>Export as CSV</b></button></th>";
         echo "</tr>";
         echo "</thead>";
+	echo "<tbody>";
         while($row = mysqli_fetch_array($result)) {
                    echo "<tr>";
                    echo "<td>" . $row['exhibit_number'] . "</td>";
@@ -26,6 +27,7 @@
                    echo "<td>" . $row['exhibit_name'] . "</td>";
                    echo "</tr>";
         }
+	echo "</tbody>";
         echo "</table>";
         mysqli_close($con);
 	

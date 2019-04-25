@@ -11,7 +11,7 @@
         $sql="SELECT * FROM event";
         $result = mysqli_query($con,$sql);
         // Print the data from the table row by row
-        echo "<table class='table table-hover table-bordered'>";
+        echo "<table id='table' class='table table-hover table-bordered'>";
         echo "<thead class='thead-dark'>";
         echo "<tr>";
         echo "<th>Event ID</th>";
@@ -22,6 +22,7 @@
 	echo "<th>Event Location <button id='export' onClick='exportTable()' class='btn btn-warning btn-sm float-right'><b>Export as CSV</b></button></th>";
         echo "</tr>";
         echo "</thead>";
+	echo "<tbody>";
         while($row = mysqli_fetch_array($result)) {
                    echo "<tr>";
                    echo "<td>" . $row['event_id'] . "</td>";
@@ -32,6 +33,7 @@
 		   echo "<td>" . $row['event_location'] . "</td>";
                    echo "</tr>";
         }
+	echo "</tbody>";
         echo "</table>";
         mysqli_close($con);
 	
