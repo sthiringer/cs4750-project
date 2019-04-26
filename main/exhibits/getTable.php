@@ -11,12 +11,13 @@
         $sql="SELECT * FROM exhibit";
         $result = mysqli_query($con,$sql);
         // Print the data from the table row by row
+	echo "<button id='export' style='margin-top:25px; padding-bottom:9px' class='btn btn-warning btn-sm float-right'><b>Export All as CSV</b></button>";
         echo "<table id='table' class='table table-hover table-bordered'>";
         echo "<thead class='thead-dark'>";
         echo "<tr>";
         echo "<th>Exhibit Number</th>";
         echo "<th>Square Feet</th>";
-        echo "<th>Exhibit Name <button id='export' onClick='exportTable()' class='btn btn-warning btn-sm float-right'><b>Export as CSV</b></button></th>";
+        echo "<th>Exhibit Name</th>";
         echo "</tr>";
         echo "</thead>";
 	echo "<tbody>";

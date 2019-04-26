@@ -10,9 +10,6 @@
   .table thead th{vertical-align: top !important;}
   </style>
   <script>
-
-    </script>
-  <script>
     function getTable() {
       if($("#tableDisplay").is(":hidden") || $("#tableDisplay").children().length == 0){
 
@@ -28,6 +25,15 @@
             $($("label:nth-of-type(1)")[0]).css("display", "block").css("float", "left");
             $($("label:nth-of-type(1)")[1]).css("display", "block").css("float", "right");
             $("#tableBtn").html("Hide Table");
+            $("#export").click(function() {
+              //console.log("clicked!");
+              //$.ajax({
+              //  type: "POST",
+              //  url: "./export.php",
+              //}).done(function( msg ) {
+                window.location = 'export.php';
+              //});
+           });
           }
         });
       }else{
@@ -36,21 +42,6 @@
       }
     }
   </script>
-
-  <script>
-    function exportTable() {
-      console.log("i got clicked");
-      var csv = $('#table').table2CSV({
-          delivery: 'value'
-      });
-      var a = document.createElement("a");
-      a.setAttribute("href", encodeURIComponent(csv));
-      a.setAttribute("download", "zoo-data.csv");
-      document.body.appendChild(a);
-      a.click();
-    }
-  </script>
-
 
   <div class="container text-center mt-5">
     <h1>Tours</h1>

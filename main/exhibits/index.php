@@ -34,21 +34,6 @@
     }
   </script>
 
-  <script>
-    function exportTable() {
-      console.log("i got clicked");
-      var csv = $('#table').table2CSV({
-          delivery: 'value'
-      });
-      var a = document.createElement("a");
-      a.setAttribute("href", encodeURIComponent(csv));
-      a.setAttribute("download", "zoo-data.csv");
-      document.body.appendChild(a);
-      a.click();
-    }
-  </script>
-
-
   <div class="container text-center mt-5">
     <h1>Exhibits</h1>
   </div>

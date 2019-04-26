@@ -11,6 +11,7 @@
         $sql="SELECT * FROM animal";
         $result = mysqli_query($con,$sql);
         // Print the data from the table row by row
+	echo "<button id='export' style='margin-top:25px; padding-bottom:9px' class='btn btn-warning btn-sm float-right'><b>Export All as CSV</b></button>";
         echo "<table id='table' class='table table-hover table-bordered'>";
         echo "<thead class='thead-dark'>";
         echo "<tr>";
@@ -18,7 +19,7 @@
         echo "<th>Species</th>";
         echo "<th>Name</th>";
         echo "<th>Weight</th>";
-        echo "<th>Conservation Status <button id='export' onClick='exportTable()' class='btn btn-warning btn-sm float-right'><b>Export as CSV</b></button></th>";
+        echo "<th>Conservation Status</th>";
         echo "</tr>";
         echo "</thead>";
 	echo "<tbody>";

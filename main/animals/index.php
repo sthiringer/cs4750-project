@@ -12,7 +12,7 @@
   </style>
   <script>
     
-    </script>
+  </script>
   <script>
     function getTable() {
       if($("#tableDisplay").is(":hidden") || $("#tableDisplay").children().length == 0){
@@ -29,26 +29,21 @@
             $($("label:nth-of-type(1)")[0]).css("display", "block").css("float", "left");
             $($("label:nth-of-type(1)")[1]).css("display", "block").css("float", "right");
             $("#tableBtn").html("Hide Table");
+            $("#export").click(function() {
+              //console.log("clicked!");
+              //$.ajax({
+              //  type: "POST",
+              //  url: "./export.php",
+              //}).done(function( msg ) {
+                window.location = 'export.php';
+              //}); 
+           });
           }
         });
       }else{
         $("#tableDisplay").fadeOut(200);
         $("#tableBtn").html("Display Table");
       }
-    }
-  </script>
-
-  <script>
-    function exportTable() {
-      console.log("i got clicked");  
-      var csv = $('#table').table2CSV({
-          delivery: 'value'
-      });
-      var a = document.createElement("a");
-      a.setAttribute("href", encodeURIComponent(csv));
-      a.setAttribute("download", "zoo-data.csv");
-      document.body.appendChild(a);
-      a.click();
     }
   </script>
 
@@ -86,6 +81,37 @@
 </html>
 
 <?php
+function exportAsCSV(){
+   require('/u/sjt7zn/public_html/project/library.php');
+   $con = new mysqli($SERVER, $USERNAME, $PASSWORD,$DATABASE);
+   // Check connection
+   if (mysqli_connect_errno()) {
+    echo("Can't connect to MySQL Server. Error code: " .
+    mysqli_connect_error());
+    return null;
+   }
+   $sql = 'SELECT * FROM animals';
+   $result = mysqli_query($con,$sql);
+   $f = fopen('php://temp', 'wt');
+   while($row = mysqli_fetch_array($result)){
+     if($first){
+       fputcsv($f, array_keys($row));
+       $first = false;
+     }
+     fputcsv($f, $row);
+   }
+   mysqli_close($con);
+   $size = ftell($f);
+   rewind($f);
+
+   header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+   header("Content-Length: $size");
+   header("Content-type: text/csv");
+   header("Content-Disposition: attachment; filename=$filename");
+   fpassthru($f);
+   exit;
+}
+
 function getNum()
 {
    require('/u/sjt7zn/public_html/project/library.php');
