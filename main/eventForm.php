@@ -25,10 +25,9 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
-<body>
-
+<body style="background-color:lightgreen;">
   <div class="container text-center mt-3 mb-3">
-    <h4>Enter in information for a new event here!</h4>
+    <h1 class="display-1"><b>New Event</b></h4>
   </div>
   <div class="container">
     <form action="addEvent.php" method="post">
@@ -61,7 +60,7 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
       </div>  
     </form>
     <div class="container text-center p-3">
-      <a href="./"><button class="btn btn-primary">Back to Main</button></a>
+      <a href="./"><button class="btn btn-danger">Back to Main</button></a>
     </div>
 
 </body>

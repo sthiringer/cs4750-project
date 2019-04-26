@@ -5,11 +5,14 @@
   <title>Delete Event Page</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+.table td{background-color:white;}
+</style>
 
 </head>
-<body>
+<body style="background-color:lightgreen;">
   <div class="container text-center mt-3 mb-3">
-    <h4>Enter the ID of the Event to Delete.</h4>
+    <h1 class="display-1"><b>Delete Event</b></h4>
   </div>
   <div class="container">
     <form action="deleteEvent.php" method="post">
@@ -17,11 +20,11 @@
         <label for="eventID">Event ID to delete: </label><input class="form-control" type="text" name="eventID" id="eventID" required>
         </div>
       <div class="container text-center p-3">
-          <button class="btn btn-danger" type="submit">Delete</button>
+          <button class="btn btn-primary" type="submit">Delete</button>
       </div>
     </form>
     <div class="container text-center p-3">
-      <a href="./"><button class="btn btn-primary">Back to Main</button></a>
+      <a href="./"><button class="btn btn-danger">Back to Main</button></a>
     </div>
     
 <?php

@@ -5,7 +5,7 @@
 <script src="/~sjt7zn/project/table2CSV.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 </head>
-<body>
+<body style="background-color:cornsilk;">
   <style>
   html { margin-left: calc(100vw - 100%);}
   .table thead th{vertical-align: top;}
@@ -48,7 +48,7 @@
   </script>
 
   <div class="container text-center pt-5">
-    <h1>Animals</h1>
+    <h1 class="display-1"><b> Animals </b></h1>
   </div>
   <div class="container-flex text-center mt-5">
     <div class="row justify-content-md-center">
@@ -70,7 +70,7 @@
 
   <div class="container text-center pt-5">
     <button id="tableBtn" class="btn btn-success mr-5" onclick="getTable()">Display Table</button>
-    <a href="../" <button class="btn btn-primary ml-5">Back to Main</button></a>
+    <a href="../" <button class="btn btn-danger ml-5">Back to Main</button></a>
   </div>
   
   <div class="container pt-5" id="tableDisplay">

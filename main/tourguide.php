@@ -21,9 +21,9 @@ if ($_SESSION['user_type'] != 'TOURGUIDE'){
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
-<body>
+<body style="background-color:khaki;">
 <div class="container text-center mt-3 mb-3">
-  <h3>Enter information for a tour here!</h3>
+  <h1 class="display-1"><b>New Tour</b></h4>
 </div>
 
  <div class="container">
@@ -45,7 +45,7 @@ if ($_SESSION['user_type'] != 'TOURGUIDE'){
       </div>
   </form>
   <div class="container text-center p-3">
-    <a href="logout.php"> Go back to Welcome Page </a>
+    <a href="logout.php"><button class="btn btn-danger">Go back to Welcome Page</button></a>
   </div>
 
 </body>

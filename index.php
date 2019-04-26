@@ -42,11 +42,11 @@ h1, h3, h4, h5, label{
 <body>
 <div class="bg">
   <div class="container text-center pt-3 mb-3">
-      <h1>Welcome to the Zoo!</h1>
+      <h1 class="display-1"><b> Welcome to the Zoo! </b></h1>
       <h5>Maintained by the Hookeepers</h3>
   </div>
 <div class="container pt-5">
-    <h4>To proceed to the site as a guest, please enter your name below.</h4>
+    <h4>To proceed to the site, please enter your name below.</h4>
     <form action="main/index.php" method="post">
       <div class="form-group">
 	<label for="firstname">First Name: </label><input class="form-control" type="text" name="firstname" id="firstname" required>
@@ -55,7 +55,7 @@ h1, h3, h4, h5, label{
 	<label for="lastname">Last Name: </label><input class="form-control" id="lastname" type="text" name="lastname" required>
       </div>
       <div class="container text-center p-3">
-	<button type="submit" class="btn btn-primary" name="login-btn" value="guest" style="margin-right:30px;">Continue as Guest</button><button type="submit" class="btn btn-danger" name="login-btn" value="zookeeper" style="margin-right:30px;">Continue as Zookeeper</button><button type="submit" class="btn btn-warning" name="login-btn" value="tourguide">Continue as Tour Guide</button>
+	<button type="submit" class="btn btn-primary" name="login-btn" value="guest" style="margin-right:30px;">Continue as Guest</button><button type="submit" class="btn btn-primary" name="login-btn" value="zookeeper" style="margin-right:30px;">Continue as Zookeeper</button><button type="submit" class="btn btn-primary" name="login-btn" value="tourguide">Continue as Tour Guide</button>
 	</div>
      </form>
   </div>

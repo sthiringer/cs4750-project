@@ -67,7 +67,7 @@ h1, h3, h4, h5, label{
     <a href="./deleteForm.php"><button class="btn btn-danger">Delete Event</button></a>
   </div>
   <div class="container text-center p-3">
-    <a href="logout.php"><button class="btn" style="background-color:lightblue" type="button">Go Back to the Welcome Page</button></a>
+    <a href="logout.php"><button class="btn btn-danger" type="button">Go Back to the Welcome Page</button></a>
   </div>
 </div>
 </body>

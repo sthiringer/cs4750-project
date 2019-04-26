@@ -25,10 +25,10 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
 
 </head>
 
-<body>
+<body style="background-color:lightgreen;">
 
 <div class="container text-center mt-3 mb-3">
-    <h3>Insert the Animal Information Below</h3>
+    <h1 class="display-1"><b>New Animal</b></h4>
 </div>
 
 <div class="container">
@@ -50,7 +50,7 @@ if ($_SESSION['user_type'] != 'ZOOKEEPER'){
       </div>
     </form>
     <div class="container text-center p-3">
-      <a href="./"><button class="btn btn-primary">Back to Main</button></a>
+      <a href="./"><button class="btn btn-danger">Back to Main</button></a>
     </div>
 
   </div>
